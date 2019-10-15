@@ -10,19 +10,34 @@ import nmap
 import json
 
 try:
-    nm = nmap.PortScanner() # creating object that will hold our scan
-    # scan options menu HERE
-    menu = int(input("\nMake a selection:\n1. Scan a single IP\n2. Scan a range\n\n"))
+    menu = int(input("\nMake a selection:\n1. Scan a single IP address.\n2. CURRENTLY UNAVAILABLE - Scan a range of IP addresses.\n3. Scan different IP addresses.\n\n"))
     # scanning single IP
     if(menu == 1):
+        nm = nmap.PortScanner()
         ip = input("\nEnter the IP to be scanned: ")
-        print("scanning single IP")
-    # scanning multiple IPs
+        print("scanning single IP address...")
+        # BELOW, THE SCANS CONDUCTED
+        nm.scan(ip, '21-443')   # port scanning user-entered IP from ports 21-443
+        nm.scan(ip, arguments='-O')     # OS detection using TCP/IP stack fingerprinting
+    # scanning a range of IP
     elif(menu == 2):
-        print("scanning range")
-    # BELOW, THE SCANS CONDUCTED
-    nm.scan(ip, '21-443')   # port scanning user-entered IP from ports 21-443
-    nm.scan(ip,arguments='-O')  # OS detection using TCP/IP stack fingerprinting
+        nm = nmap.PortScannerAsync()
+        # this function is needed for async scanning
+        def callback_result(host, scan_result):
+            print('-------------------------------')
+            print(host, scan_result)
+        ip = input("\nEnter the range of IP addresses (example: 192.168.1.0/30): ")
+        print("scanning given range of IP addresses...")
+        nm.scan(ip,'21-443')
+        nm.scan(ip, arguments='-O', callback=callback_result)
+    # scanning different IPs
+    elif(menu == 3):
+        nm = nmap.PortScanner()
+        ip = input("\nEnter the IP addresses to be scanned (EACH SEPARATED BY A SINGLE SPACE): ")
+        print("scanning entered IP addresses...")
+        # BELOW, THE SCANS CONDUCTED
+        nm.scan(ip, '21-443')   
+        nm.scan(ip, arguments='-O')
 
     # creating list of nmap dictionaries
     nmapList = []
