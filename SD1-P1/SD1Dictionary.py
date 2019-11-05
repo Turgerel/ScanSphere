@@ -8,6 +8,7 @@ import os
 import sys
 import nmap
 import json
+import networkx as nx
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 
@@ -74,9 +75,35 @@ try:
     mydb=myclient.ScanData #database
     mycol = mydb.nmapData #collection
     print("Sending to database...")
-    result = mycol.insert_many(nmapList)
+    results = mycol.insert_many(nmapList)
     #result = mycol.insert_one(nmapList[0])
-    print(result)
     
+except Exception as e:
+    print(e)
+
+  
+try:
+    
+    G=nx.Graph()
+    print(G.nodes())
+    print(G.edges())
+
+    print(type(G.nodes()))
+    print(type(G.edges()))
+    # adding just one node:
+    G.add_node("a")
+    # a list of nodes:
+    G.add_nodes_from(["b","c"])
+    
+    #for all successful IDs inserted to db, add objectID string to graph G
+    for element in results.inserted_ids:
+        G.add_node(element)
+    print(G.nodes())
+    print(G.edges())
+
+    print(type(G.nodes()))
+    print(type(G.edges()))
+        
+
 except Exception as e:
     print(e)
