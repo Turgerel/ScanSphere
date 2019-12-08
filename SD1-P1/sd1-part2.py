@@ -1,7 +1,7 @@
 """
-Program Title: SD1-P1
-Program Desc.: This program implements the specifications of Senior Design (SD) Part 1, which parses nmap results
-(Dhivahari, Turgerel, Hosna) and prepares them for database transfer (Katerina, Kulprawee).
+Program Title: SD1-P2
+Program Desc.: This program implements the specifications of Senior Design (SD) Part 2, which sorts the database 
+entries and sorting them to create nodes and edges for graph construction in Part 3.
 Authors: Dhivahari Vivek, Turgerel Amgalanbaatar, Hosna Zulali, Kulprawee Prayoonsuk, Katerina Walter
 """
 import os
@@ -25,9 +25,39 @@ def createAttr(attr,value,myATT,myNODES):
     print("done inserting att node")
     return b
 
-def compareAll():
-    #TODO implement comparison between types
-    return True
+def compareAll(attr,value,myATTdoc):
+    
+    if type(attr) == type (myATTdoc["att_key"]):
+        #do normal check
+        if attr == myATTdoc["att_key"]:
+            if type(value) == type(myATTdoc["att_val"]):
+                #do normal check
+                if value == myATTdoc["att_val"]:
+                    return True #iff all match
+                else:
+                    return False
+                
+            else:
+                print("Fix type compare 1")
+                #fix type compare
+        else:
+            return False
+    else:
+        print("Fix type compare 2")
+        #fix type compare
+    
+    return False
+
+# will change edge weight appropriately (1 for now)
+def edgeWeight():
+    return 1
+
+def createEdge(src,des):
+    print()
+    print("creating new edge")
+    weight = edgeWeight()
+    edgeDoc = {'node1': src, 'node2':des, 'weight': weight}
+    return edgeDoc
 
 # connecting to database / appropriate collections
 def populateHostNode():
@@ -44,6 +74,7 @@ def populateHostNode():
         
         myNODES.drop()  # clearing host nodes each run (for new scan)
         myATT.drop()    # clearing attribute docs
+        myEDGES.drop()  # clearing edges doc 
 
         print ("creating host nodes...")
         # iterating through nmapList collection (raw data)
@@ -58,26 +89,42 @@ def populateHostNode():
             myNMAPdoc = myNMAP.find_one(myQuery)   # temporarily saving the NMAP doc in question 
             scanData = myNMAPdoc.get("scanData")    # retrieving attributes from each nmap node
             # for each pair of attributes
+            print()
             print("checking for attribute values...")
-            for attr, value in scanData.items():
+            dest = '' #object id 
+            for attr, value in scanData.items():   #attr,value of nmapData for each H type node
                 # for each Node document of type (A)ttribute 
                 # compare against existing nodes for this exact combo
                 results = myNODES.find({"node_type":"A"})
+                print()
+                print("searching through node type A results....len:", myNODES.count_documents({"node_type":"A"}))
+                counter = 0
                 isFound = False
                 for res in results:
-                    print("searching through node type A results....")
+                    counter+=1
                     nodeQuery = {"_id": res["ref_ID"]}    # accessing attribute doc via att node's reference ID
                     myATTdoc = myATT.find_one(nodeQuery)   # temporarily saving the ATTR doc in question
-                    print(myATTdoc, type(myATTdoc))
-                    # if the combination already exists as an attribute node
-                    print(type(myATTdoc["att_key"]), type(attr))
-                    print(type(myATTdoc["att_val"]), type(value))
-                    #TODO implement comparison fuction, replace this line below!
-                    if myATTdoc["att_key"] == attr and myATTdoc["att_val"] == value:
+                    
+                    if compareAll(attr,value,myATTdoc): #if T.E. A type node with attr,value, no action needed
+                        print("Compare True")
+                        dest = res['_id']
                         isFound = True
+                        break
                 if not isFound:
+                    print("creating new A type node")
                     result = createAttr(attr,value,myATT,myNODES)
-                    print(result)
+                    dest = result.inserted_id
+                    print(result, attr, value) #print resulting A type node
+                    
+                # making edges
+                print(type(x['_id']))
+                print("making edge")
+                newEdge = createEdge(x['_id'],dest)
+                print(type(newEdge),newEdge)
+                edgeResult = myEDGES.insert_one(newEdge)
+                print()
+                print(edgeResult)
+            
                     
                
     except Exception as e:
