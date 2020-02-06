@@ -2,9 +2,8 @@
 
 <details>
   <summary>SEMESTER 1: Senior Design CSCI 4738</summary>
-  
+ 
 **ABOUT**
-
 Our mission is to create a tool that scans a network and analyizes the output through visulaizations. 
 
 #### SD1-P1.py
