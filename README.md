@@ -16,7 +16,7 @@ Our second goal was using our raw network data to sort and create entries, nodes
 https://docs.google.com/document/d/1hECHP02wrSGvhkiV0S3u3GbYJ4b4J8GDqd7kqQ7VGAA/edit?usp=sharing
 
 #### SD1-P3.py
-Our third goal was to actually construct the graph using our EDGES collection from our database. This graph is very crucial since it will be needed to implemented graph embedding functions/techniques through the GEM Library. We are mostly using SDNE and node2vec. 
+Our third goal was to actually construct the graph using our EDGES collection from our database. The graph is very crucial since it will be used in the graph embedding functions/techniques through the GEM Library. We are mostly using SDNE and node2vec. 
 
 Here is a link to the GEM Library repo.
 
