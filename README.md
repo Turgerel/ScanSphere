@@ -22,3 +22,7 @@ Here is a link to the GEM Library repo.
 
 https://github.com/palash1992/GEM
 </details>
+
+<details>
+  <summary>SEMESTER 2: Senior Design CSCI 4739</summary>
+</details>
