@@ -1,4 +1,4 @@
-# SD project "network mapper"
+# ScanSphere
 **ABOUT**
 
 Network scanners and vulnerability analysis tools are invaluable in discovering fingerprinting data about network hosts. These fingerprints consists of a diverse and large variety of attributes, ranging from host OS and open or closed ports, to running services and their patch levels or vulnerabilities.
