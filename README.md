@@ -14,7 +14,7 @@ ScanSphere was designed, implemented, and debugged/troubleshot by Dhivahari Vive
 The tool gives the user three scanning options: scan a single IP address, scan a range of IP addresses, or scan several specific IP addresses. It uses Nmap (more specifically, the *python-nmap* library that helps in using the Nmap port scanner) and then prepares the raw nmap data for database transfer.
 
 #### Part 2 - Database Collection, Graph Node/Edge Generation
-The tool transfers the raw Nmap data collected in Part 1 to a MongoDB server which will store the scanned network's data. The data is then sorted into nodes (hosts and attributes) and edges (relationships between hosts and attributes) for graph construction in Part 3. See the ScanSphere/Graph Construction document to understand this process in further detail.
+The tool transfers the raw Nmap data collected in Part 1 to a MongoDB server which will store the scanned network's data. The data is then sorted into nodes (hosts and attributes) and edges (relationships between hosts and attributes) for graph construction in Part 3. See the ScanSphere/graph-construction.md to understand this process in further detail.
 
 #### Part 3 - Graph Construction
 The nodes and edges generated in Part 2 will be used to construct a directed, weighted graph (using Python's *NetworkX* library). 
