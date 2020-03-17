@@ -5,4 +5,4 @@ Part 2 of the tool's implementation sorts the raw Nmap data in the MongoDB datab
 The design for the algorithm written in Part 2 is written below, with the names of the appropriate MongoDB collections.
 
 1. **Execute the nmap scans as already implemented and populate the database's nmapData Collection (in other words, the raw nmap scan data).**
-..a.) The Node collection, the Edge collection, and the Attribute collection in the ScanData database. These four collections generate a document per entry, and each document has its own automatically generated Object ID.
+  a.) The Node collection, the Edge collection, and the Attribute collection in the ScanData database. These four collections generate a document per entry, and each document has its own automatically generated Object ID.
