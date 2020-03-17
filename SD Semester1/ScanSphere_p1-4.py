@@ -1,6 +1,6 @@
 """
-Program Title: SD-final
-Program Desc.: good evening. This tool, comprised of four parts, is a network security tool that scans a 
+Program Title: ScanSphere - Part 1-4
+Program Desc: This tool, comprised of four parts, is a network security tool that scans a 
 network and assesses its overall security posture. In Part 1, the tool will use nmap to scan a network,
 giving the user three scanning options and prepare the raw nmap data for database transfer. Part 2 oversees
 the database transfer of the raw data collected in Part 1 and parses the raw data to create nodes (hosts
