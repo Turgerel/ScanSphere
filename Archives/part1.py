@@ -1,6 +1,6 @@
 """
 Program Title: ScanSphere - Part 1
-Program Desc: This program implements the specifications of Senior Design (SD) Part 1, which parses nmap results 
+Program Desc: This program implements the specifications of ScanSphere - Part 1, which parses nmap results 
 (Dhivahari, Turgerel, Hosna) and prepares them for database transfer (Katerina, Kulprawee).
 Authors: Turgerel Amgalanbaatar, Hosna Zulali, Dhivahari Vivekanandasarma, Kulprawee Prayoonsuk, Katerina Walter
 """
