@@ -1,6 +1,6 @@
 """
 Program Title: ScanSphere - Part 3
-Program Desc: This program implements the specifications of Senior Design (SD) Part 3, which 
+Program Desc: This program implements the specifications of ScanSphere - Part 3, which 
 takes from the EDGES collection (database) populated in Part 2, creates an actual graph, and
 executes graph embedding functions via the GEM library (namely the node2vec and SDNE).
 Authors: Dhivahari Vivek, Turgerel Amgalanbaatar, Hosna Zulali, Kulprawee Prayoonsuk, Katerina Walter
