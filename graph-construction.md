@@ -17,3 +17,14 @@ Additionally, the database contains a fifth collection called *counter* which as
     - Parse through nmapData collection by document.
         - For each nmapData document (in other words, for each host scanned), a node document (for the *nodes* collection) is created.
         - This node document automatically generates an object ID and has a reference ID to the nmapData document it came from.
+        - In the node document, assign a node type (H)ost or (A)ttribute.
+    - By the end of this step, all node documents of type "(H)ost" should be created for every host scanned.
+
+3. **Populate Node Collection with type (A)ttribute and Edges collection.**
+    - For every "(H)ost"-type node collection document (created in step 2)...
+        - Take the reference ID of the document to find the corresponding nmapData document and iterate through the host's attributes.
+        - For every attribute_key/value (i.e. os_name/"Ubuntu") found in this nmapData document...
+            - Search the node collection document of type (A)ttribute using the reference ID to the attribute collection document.
+                - **IF MATCH FOUND** (in other words, if after looking through the nodes document, we find one whose reference ID                           matches the object ID of the corresponding Attributes document): Make an edge between node collection document of                       type (H)ost and node collection document of type (A)ttribute.
+                - **IF MATCH NOT FOUND** (in other words, if the key/combo do not exist together): Look through the entire nodes                           collection at this point and check if any of them are of type (A)ttribute. Attempt to find a node document of type                     (A)ttribute with a reference ID that connects to the appropriate Attributes collection document).
+                
