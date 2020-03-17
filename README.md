@@ -10,10 +10,16 @@ ScanSphere was designed, implemented, and debugged/troubleshooted by Dhivahari V
 <details>
   <summary>SEMESTER 1: Network Scanning, Graph Construction, and Graph Embedding</summary> 
 
-#### Part 1 - Nmap Network Scan
-The user ca network scanner using NMAP python library, parsing the results, and creating a JSON file with the collected network information in order for it to be used in our database. The 
+Part 2 oversees
+the database transfer of the raw data collected in Part 1 and parses the raw data to create nodes (hosts
+and attributes) and edges. Part 3 then takes this filtered data and constructs a directed, weighted graph,
+after which the tool executes the Structured Deep Network Embedding (SDNE) and node2vec graph embedding
+techniques in Part 4.
 
-#### SD1-P2.py
+#### Part 1 - Nmap Network Scan
+The tool gives the user three scanning options: scan a single IP address, scan a range of IP addresses, or scan several specific IP addresses. It uses Nmap (more specifically, the python-nmap library that helps in using the Nmap port scanner) and then prepares the raw nmap data for database transfer.
+
+#### Part 2 - 
 Our second goal was using our raw network data to sort and create entries, nodes, and edges for the graph construction. Here is a link to our thought process of the graph construction. (Note: Relationship entity model) 
 
 https://docs.google.com/document/d/1hECHP02wrSGvhkiV0S3u3GbYJ4b4J8GDqd7kqQ7VGAA/edit?usp=sharing
