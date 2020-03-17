@@ -31,8 +31,10 @@ from gem.embedding.sdne     import SDNE
 
 """
 ---------------------------------------------------------------------------------------------------------------
-Part 1 - NMAP SCAN                                                                                            |
-After the client runs the desired nmap scan, the scan results are parsed and prepared for database transfer.  |
+Part 1 - NMAP NETWORK SCAN                                                                                  
+The tool gives the user three scanning options: scan a single IP address, scan a range of IP addresses, or     
+scan several specific IP addresses. It uses Nmap (more specifically, the python-nmap library that helps in    
+using the Nmap port scanner) and then prepares the raw nmap data for database transfer.                       
 ---------------------------------------------------------------------------------------------------------------
 """
 
@@ -168,9 +170,11 @@ def rawtoDB(nmapList):
 
 """
 ---------------------------------------------------------------------------------------------------------------
-Part 2 - DATABASE SORTING, NODE AND EDGE CREATION							      |
-The tool will now sort the raw database entries (via nmapData documents) to create nodes 		      |
-and edges for graph construction in Part 3. 								      |
+Part 2 - DATABASE COLLECTION, GRAPH NODE/EDGE GENERATION							      
+The tool transfers the raw Nmap data collected in Part 1 to a MongoDB server which will store the scanned 
+network's data. The data is then sorted into nodes (hosts and attributes) and edges (relationships between 
+hosts and attributes) for graph construction in Part 3. See the Graph Construction document to understand 
+this process in further detail.
 ---------------------------------------------------------------------------------------------------------------
 """
 
@@ -340,8 +344,9 @@ main()
 
 """
 ---------------------------------------------------------------------------------------------------------------
-Part 3 - GRAPH CONSTRUCTION										      |
-Using the node and edge documents created in part 2 to create a graph object using NetworkX.                  |
+Part 3 - GRAPH CONSTRUCTION										      
+The nodes and edges generated in Part 2 will be used to construct a directed, unweighted graph (using 
+Python's NetworkX library).
 ---------------------------------------------------------------------------------------------------------------
 """
 # DiGraph is a base class for directed graphs (stores directed edges)
@@ -380,9 +385,9 @@ print("\nThe total number of nodes is: ", G.number_of_nodes(),'\n')
 
 """
 -------------------------------------------------------------------------------------------------------------------
-Part 4 - Graph Embedding Methods (GEM)										  |
-The Python package GEM will implement Structural Deep Network Embedding (SDNE) and node2vec, two graph embedding  |
-techniques selected for their ways of representing the scanned data graphs in a low dimensional vector space.     |
+Part 4 - GRAPH EMBEDDING METHODS (GEM)										  
+The tool will then execute the Structured Deep Network Embedding (SDNE) and node2vec graph embedding techniques
+(using the GEM library).
 -------------------------------------------------------------------------------------------------------------------
 """
 
