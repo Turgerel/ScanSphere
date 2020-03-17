@@ -1,4 +1,4 @@
-# Graph Construction
+# Part 2 - A Description of the Graph Construction
 
 Part 2 of the tool's implementation sorts the raw Nmap data in the MongoDB database into nodes and edges. This implementation required a very extensive process in order to properly reference MongoDB documents, to create separate "host" and "attribute" nodes, and to account for every attribute_key/value saved (for instance, if the attribute/key combination was already found in a previous host, then the attribute node for that key/value need not be created again).
 
