@@ -26,5 +26,7 @@ The tool will then execute the Structured Deep Network Embedding (SDNE) and node
 
 <details>
   <summary>SEMESTER 2: Graphical User Interface (GUI), Clustering Methods</summary>
+  
+  This section will be updated as the semester progresses.
 
 </details>
