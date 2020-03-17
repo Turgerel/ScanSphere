@@ -1,7 +1,8 @@
 """
-Program Title: SD1-P1
-Program Desc.: This program implements the specifications of Senior Design (SD) Part 1, which parses nmap results
-(Dhivahari, Turgerel, Hosna) and prepares them for database transfer (Katerina, Kulprawee).
+Program Title: ScanSphere - Part 1 (dictionary)
+Program Desc.: This program implements the specifications of Part 1 using a dictionary, which parses nmap results
+(Dhivahari, Turgerel, Hosna) and prepares them for database transfer (Katerina, Kulprawee). This is an earlier
+draft of ScanSphere - Part 1.
 Authors: Dhivahari Vivek, Turgerel Amgalanbaatar, Hosna Zulali, Kulprawee Prayoonsuk, Katerina Walter
 """
 import os
