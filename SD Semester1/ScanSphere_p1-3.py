@@ -1,6 +1,7 @@
 """
-Program Title: SD-final
-Program Desc.:
+Program Title: ScanSphere - Part 1-3
+Program Desc: This program implements parts 1 through 3 of the ScanSphere tool. This encompasses the
+tool from the nmap scan of the desired network to the network's graph construction and graph embedding.
 Authors: Dhivahari Vivek, Turgerel Amgalanbaatar, Hosna Zulali, Kulprawee Prayoonsuk, Katerina Walter
 """
 import os
