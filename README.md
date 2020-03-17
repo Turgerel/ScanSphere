@@ -10,31 +10,23 @@ ScanSphere was designed, implemented, and debugged/troubleshooted by Dhivahari V
 <details>
   <summary>SEMESTER 1: Network Scanning, Graph Construction, and Graph Embedding</summary> 
 
-Part 2 oversees
-the database transfer of the raw data collected in Part 1 and parses the raw data to create nodes (hosts
-and attributes) and edges. Part 3 then takes this filtered data and constructs a directed, weighted graph,
-after which the tool executes the Structured Deep Network Embedding (SDNE) and node2vec graph embedding
-techniques in Part 4.
-
 #### Part 1 - Nmap Network Scan
-The tool gives the user three scanning options: scan a single IP address, scan a range of IP addresses, or scan several specific IP addresses. It uses Nmap (more specifically, the python-nmap library that helps in using the Nmap port scanner) and then prepares the raw nmap data for database transfer.
+The tool gives the user three scanning options: scan a single IP address, scan a range of IP addresses, or scan several specific IP addresses. It uses Nmap (more specifically, the *python-nmap* library that helps in using the Nmap port scanner) and then prepares the raw nmap data for database transfer.
 
-#### Part 2 - 
-Our second goal was using our raw network data to sort and create entries, nodes, and edges for the graph construction. Here is a link to our thought process of the graph construction. (Note: Relationship entity model) 
+#### Part 2 - Database Collection, Graph Node/Edge Generation
+The tool transfers the raw Nmap data collected in Part 1 to a MongoDB server which will store the scanned network's data. The data is then sorted into nodes (hosts and attributes) and edges (relationships between hosts and attributes) for graph construction in Part 3. See the Graph Construction document to understand this process in further detail.
 
-https://docs.google.com/document/d/1hECHP02wrSGvhkiV0S3u3GbYJ4b4J8GDqd7kqQ7VGAA/edit?usp=sharing
+#### Part 3 - Graph Construction
+The nodes and edges generated in Part 2 will be used to construct a directed, weighted graph (using Python's *NetworkX* library). 
 
-#### SD1-P3.py
-Our third goal was to actually construct the graph using our EDGES collection from our database. The graph is very crucial since it will be used in the graph embedding functions/techniques through the GEM Library. We are mostly using SDNE and node2vec. 
+#### Part 4 - Graph Embedding Methods (GEM)
+The tool will then execute the Structured Deep Network Embedding (SDNE) and node2vec graph embedding techniques (using the *GEM* library).
 
-Here is a link to the GEM Library repo.
-
-https://github.com/palash1992/GEM
 </details>
 
 <details>
-  <summary>SEMESTER 2: Senior Design CSCI 4739</summary>
+  <summary>SEMESTER 2: Graphical User Interface (GUI), Clustering Methods</summary>
   
 #### SD2-P1.py
-Our current goal is to create a GUI (with visualizations) for our tool while providing information about the scanned network.
+
 </details>
