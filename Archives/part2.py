@@ -1,6 +1,6 @@
 """
 Program Title: ScanSphere - Part 2
-Program Desc.: This program implements the specifications of Senior Design (SD) Part 2, which sorts the database 
+Program Desc: This program implements the specifications of Senior Design (SD) Part 2, which sorts the database 
 entries and sorting them to create nodes and edges for graph construction in Part 3.
 Authors: Dhivahari Vivek, Turgerel Amgalanbaatar, Hosna Zulali, Kulprawee Prayoonsuk, Katerina Walter
 """
