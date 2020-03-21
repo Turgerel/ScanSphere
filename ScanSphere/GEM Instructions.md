@@ -21,7 +21,7 @@ Here are the instructions to download GEM and running the graph embedding techni
 
     *models.append(node2vec(d=2, max_iter=1, walk_len=80, num_walks=10, con_size=10, ret_p=1, inout_p=1))*
     
-    *models.append(SDNE(d=2, beta=5, alpha=1e-5, nu1=1e-6, nu2=1e-6, K=3,n_units=[50, 15,], rho=0.3, n_iter=50,                     xeta=0.01,n_batch=100,
+    *models.append(SDNE(d=2, beta=5, alpha=1e-5, nu1=1e-6, nu2=1e-6, K=3,n_units=[50, 15,], rho=0.3, n_iter=50,*                     xeta=0.01,n_batch=100,
                 *modelfile=['enc_model.json', 'dec_model.json'],*
                 *weightfile=['enc_weights.hdf5', 'dec_weights.hdf5']))*
 
@@ -38,6 +38,7 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
     *pip3 install tensorflow==1.13.1*
     
 2. Go to *tests* directory on your terminal and run the following:
+
     *python3 test_karate.py --SDNE 0*   
   
 3. You should be able to see similar outputs as shown in the GEM GitHub Repository.
