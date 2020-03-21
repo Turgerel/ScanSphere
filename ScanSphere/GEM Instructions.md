@@ -45,6 +45,7 @@ Here are the instructions to download GEM and running the graph embedding techni
 3. You should be able to see similar outputs as shown in the GEM GitHub Repository.
 
 </details>
+
 **NODE2VEC** 
 
 <details>
