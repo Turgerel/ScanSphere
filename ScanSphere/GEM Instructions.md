@@ -29,7 +29,7 @@ Here are the instructions to download GEM and running the graph embedding techni
 
 **SDNE (For all Operating Systems)**
 
-Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
+***Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.***
 
 1. On your terminal (cmd prompt, etc.) install specified versions:
 
@@ -60,7 +60,7 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
 
     *export PATH=/Users/{user}/Desktop/SD/GEM-master/snap-master/examples/Release/:$PATH*
     
-    Tip: You can go into the *examples* folder, drag and drop the *Release* folder into the bash file.
+    ***Tip: You can go into the *examples* folder, drag and drop the *Release* folder into the bash file.***
     
 6. In your *node2vec* folder, run: *./node2vec* to install
 
