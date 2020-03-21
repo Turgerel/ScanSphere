@@ -44,8 +44,30 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
 3. You should be able to see similar outputs as shown in the GEM GitHub Repository.
 
 **NODE2VEC** 
-#####sdf
 
+#### FOR MAC OS
+
+1. Download Snap: https://github.com/snap-stanford/snap
+
+2. Move your *snap-master* into the *GEM-master*
+
+3. On your terminal, cd into your *snap-master* directory and run a *make all*
+    
+4. After *make all* is done, cd into *examples* and then cd into *node2vec* folder
+
+5. Go into your bash file: *vi ~/.bash_profile* and change the export path:
+
+    *export PATH=/Users/{user}/Desktop/SD/GEM-master/snap-master/examples/Release/:$PATH*
+    
+    Tip: You can go into the *examples* folder, drag and drop the *Release* folder into the bash file.
+    
+6. In your *node2vec* folder, run: *./node2vec* to install
+
+7. In your *node2vec* folder, run: *chmod +x ./node2vec* to give permission
+
+8. Go back to the *tests* folder in *GEM-master* and run: 
+    
+    *python3 test_karate.py --node2vec 0* 
 
 
 
