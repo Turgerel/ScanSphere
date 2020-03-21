@@ -12,15 +12,16 @@ Here are the instructions to download GEM and running the graph embedding techni
 3. Open the *test_karate.py* python file
     
 4. Comment out lines 13 - 16 so that you only have: 
-    from gem.embedding.node2vec import node2vec
-    from gem.embedding.sdne     import SDNE
+
+    *from gem.embedding.node2vec import node2vec*
+    *from gem.embedding.sdne     import SDNE*
     
 5. Comment out lines 33 - 36 so that you only have:
-    models.append(node2vec(d=2, max_iter=1, walk_len=80, num_walks=10, con_size=10, ret_p=1, inout_p=1))
-    models.append(SDNE(d=2, beta=5, alpha=1e-5, nu1=1e-6, nu2=1e-6, K=3,n_units=[50, 15,], rho=0.3, n_iter=50,                     xeta=0.01,n_batch=100,
-                modelfile=['enc_model.json', 'dec_model.json'],
-                   #configures with the model file
-                weightfile=['enc_weights.hdf5', 'dec_weights.hdf5']))
+
+    *models.append(node2vec(d=2, max_iter=1, walk_len=80, num_walks=10, con_size=10, ret_p=1, inout_p=1))*
+    *models.append(SDNE(d=2, beta=5, alpha=1e-5, nu1=1e-6, nu2=1e-6, K=3,n_units=[50, 15,], rho=0.3, n_iter=50,                     xeta=0.01,n_batch=100,
+                *modelfile=['enc_model.json', 'dec_model.json'],
+                *weightfile=['enc_weights.hdf5', 'dec_weights.hdf5']))*
 
 6. Save the file
 
