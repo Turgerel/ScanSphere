@@ -2,8 +2,8 @@
 
 Our ScanShpere tool utilizes the GEM library, specifically **node2vec** and **SDNE**. 
 Here are the instructions to download GEM and running the graph embedding techniques.
-
-**DOWNLOAD GEM**
+<details>
+    <summary>**DOWNLOAD GEM**</summary>
 
 1. Download GEM: https://github.com/palash1992/GEM
     
@@ -26,6 +26,7 @@ Here are the instructions to download GEM and running the graph embedding techni
                 *weightfile=['enc_weights.hdf5', 'dec_weights.hdf5']))*
 
 6. Save the file
+</details>
 
 <details>
   <summary>SDNE (For all Operating Systems)</summary> 
