@@ -49,6 +49,7 @@ Here are the instructions to download GEM and running the graph embedding techni
 <details>
   <summary>NODE2VEC</summary> 
 
+
 **FOR MAC OS**
 1. Download Snap: https://github.com/snap-stanford/snap
 
