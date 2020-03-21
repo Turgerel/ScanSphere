@@ -31,7 +31,7 @@ Here are the instructions to download GEM and running the graph embedding techni
 <details>
   <summary>SDNE (For all Operating Systems)</summary> 
 <br>
-***Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.***
+**Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.**
 
 1. On your terminal (cmd prompt, etc.) install specified versions:
 
