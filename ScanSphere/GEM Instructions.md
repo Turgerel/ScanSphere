@@ -32,8 +32,16 @@ Here are the instructions to download GEM and running the graph embedding techni
 Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
 
 1. On your terminal (cmd prompt, etc.) install specified versions:
-        
- 
+
+    *pip3 install matplotlib==2.2.4*
+    
+    *pip3 install tensorflow==1.13.1*
+    
+2. Go to *tests* directory on your terminal and run the following:
+    *python3 test_karate.py --SDNE 0*   
+  
+3. You should be able to see similar outputs as shown in the GEM GitHub Repository.
+
 
 
 
