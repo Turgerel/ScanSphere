@@ -1,6 +1,6 @@
 # INSTRUCTIONS TO DOWNLAOD AND RUN GEM
 
-Our ScanShpere tool utilizes the GEM library, specifically **node2vec** and **SDNE**. 
+Our ScanSphere tool utilizes the GEM library, specifically **node2vec** and **SDNE**. 
 Here are the instructions to download GEM and running the graph embedding techniques.
 <details>
     <summary>DOWNLOAD GEM</summary>
