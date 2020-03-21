@@ -43,7 +43,8 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
   
 3. You should be able to see similar outputs as shown in the GEM GitHub Repository.
 
-
+**NODE2VEC** 
+#####sdf
 
 
 
