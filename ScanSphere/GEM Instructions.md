@@ -45,7 +45,8 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
 
 **NODE2VEC** 
 
-#### FOR MAC OS
+<details>
+  <summary>FOR MAC OS</summary> 
 
 1. Download Snap: https://github.com/snap-stanford/snap
 
@@ -69,6 +70,6 @@ Note: GEM WILL NOT BE ABLE TO WORK IF YOU HAVE ANACONDA INSTALLED.
     
     *python3 test_karate.py --node2vec 0* 
 
-
+</details>
 
 
