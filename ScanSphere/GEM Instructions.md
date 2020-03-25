@@ -16,19 +16,10 @@ Here is the research paper discussing more on SDNE: https://www.kdd.org/kdd2016/
 
 ### Node2Vec 
 
-Node2vec is a graph embedding technique that takes random walks, while investigating the neighborhood nodes. Node2vec utilizes breadth-first-search(BFS) and depth-first-search(DFS) to decide what what node it will be walking to. Breadth-first-search 
+Node2vec is a graph embedding technique that takes random walks, while investigating the neighboring nodes. Node2vec utilizes breadth-first-search(BFS) and depth-first-search(DFS) as parameters in order to decide what node it will be walking to next. Breadth-first-search is when the neighborhood is restricted to nodes that are immediate neighbors of the source; better for learning local neighbors. Depth-first-search is when the neighborhood consists of nodes sequentially sampled at increasing distances from the source node; better for learning global neighbors. Since these two are parameterized, node2vec can shift from one to the other depending on the task, hence displaying different results depending on the values of the parameters. We are using node2vec for the same reasons as that of SDNE as well as having a flexible algorithm that provides a diverse set of interpretations of the network neighborhood. 
 
+Here is the research paper discussing more on node2vec: https://www.kdd.org/kdd2016/papers/files/rfp0218-groverA.pdf
 
-
-Here we propose node2vec, an algorithmic framework for learning continuous feature representations for nodes in networks. In
-node2vec, we learn a mapping of nodes to a low-dimensional space
-of features that maximizes the likelihood of preserving network
-neighborhoods of nodes. We define a flexible notion of a node’s
-network neighborhood and design a biased random walk procedure,
-which efficiently explores diverse neighborhoods. Our algorithm
-generalizes prior work which is based on rigid notions of network
-neighborhoods, and we argue that the added flexibility in exploring
-neighborhoods is the key to learning richer representations
 
 <details>
     <summary>DOWNLOAD GEM</summary>
