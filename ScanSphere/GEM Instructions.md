@@ -7,18 +7,23 @@ Here are the instructions to download GEM and running the graph embedding techni
 
 We want to use graph embedding techniques to transform the constructed graph from our scanned network data in a new low dimensional space, where each node is represented as a vector.
 
-### Structural Deep Network Embedding (SDNE)
 
+<details>
+    <summary>Structural Deep Network Embedding (SDNE)</summary>
+    
 SDNE is a graph embedding technique that tries to learn from the First-order proximity and the Second-order proximity instead of taking random walks. First-order proximity is when two nodes have a direct edge, hence we will consider them as neighbors. Second-order proximity is when two nodes have an indirect edge but are similar due to sharing multiple neighbors/adjacents nodes. The main purpose of SDNE is to capture highly non-linear structures by using the First-order(supervised) and Second-order(unsupervised) proximities which result in a semi-supervised network proximity. The reason for using SDNE for our ScanSphere tool is to make sure our graph was in a lower dimension, directed, and weighted. We wanted to have an algorithm that placed pentalties when similar nodes are mapped far from each other in the embedded space, thus permitting a zone for optimization through minimizing the space between those nodes. 
 
 Here is the research paper discussing more on SDNE: https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf
+</details>
 
 
-### Node2Vec 
+<details>
+    <summary>NODE2VEC</summary>
 
 Node2vec is a graph embedding technique that takes random walks, while investigating the neighboring nodes. Node2vec utilizes breadth-first-search(BFS) and depth-first-search(DFS) as parameters in order to decide what node it will be walking to next. Breadth-first-search is when the neighborhood is restricted to nodes that are immediate neighbors of the source; better for learning local neighbors. Depth-first-search is when the neighborhood consists of nodes sequentially sampled at increasing distances from the source node; better for learning global neighbors. Since these two are parameterized, node2vec can shift from one to the other depending on the task, hence displaying different results depending on the values of the parameters. We are using node2vec for the same reasons as that of SDNE as well as having a flexible algorithm that provides a diverse set of interpretations of the network neighborhood. 
 
 Here is the research paper discussing more on node2vec: https://www.kdd.org/kdd2016/papers/files/rfp0218-groverA.pdf
+</details>
 
 
 <details>
