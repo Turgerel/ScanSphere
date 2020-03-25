@@ -18,7 +18,7 @@ Here is the research paper discussing more on SDNE: https://www.kdd.org/kdd2016/
 
 
 <details>
-    <summary>NODE2VEC</summary>
+    <summary>Node2Vec</summary>
 
 Node2vec is a graph embedding technique that takes random walks, while investigating the neighboring nodes. Node2vec utilizes breadth-first-search(BFS) and depth-first-search(DFS) as parameters in order to decide what node it will be walking to next. Breadth-first-search is when the neighborhood is restricted to nodes that are immediate neighbors of the source; better for learning local neighbors. Depth-first-search is when the neighborhood consists of nodes sequentially sampled at increasing distances from the source node; better for learning global neighbors. Since these two are parameterized, node2vec can shift from one to the other depending on the task, hence displaying different results depending on the values of the parameters. We are using node2vec for the same reasons as that of SDNE as well as having a flexible algorithm that provides a diverse set of interpretations of the network neighborhood. 
 
