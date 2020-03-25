@@ -2,6 +2,34 @@
 
 Our ScanSphere tool utilizes the GEM library, specifically **node2vec** and **SDNE**. 
 Here are the instructions to download GEM and running the graph embedding techniques.
+
+### Graph Embedding
+
+We want to use graph embedding techniques to transform the constructed graph from our scanned network data in a new low dimensional space, where each node is represented as a vector.
+
+### Structural Deep Network Embedding (SDNE)
+
+SDNE is a graph embedding technique that tries to learn from the First-order proximity and the Second-order proximity instead of taking random walks. First-order proximity is when two nodes have a direct edge, hence we will consider them as neighbors. Second-order proximity is when two nodes have an indirect edge but are similar due to sharing multiple neighbors/adjacents nodes. The main purpose of SDNE is to capture highly non-linear structures by using the First-order(supervised) and Second-order(unsupervised) proximities which result in a semi-supervised network proximity. The reason for using SDNE for our ScanSphere tool is to make sure our graph was in a lower dimension, directed, and weighted. We wanted to have an algorithm that placed pentalties when similar nodes are mapped far from each other in the embedded space, thus permitting a zone for optimization through minimizing the space between those nodes. 
+
+Here is the research paper discussing more on SDNE: https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf
+
+
+### Node2Vec 
+
+Node2vec is a graph embedding technique that takes random walks, while investigating the neighborhood nodes. Node2vec utilizes breadth-first-search(BFS) and depth-first-search(DFS) to decide what what node it will be walking to. Breadth-first-search 
+
+
+
+Here we propose node2vec, an algorithmic framework for learning continuous feature representations for nodes in networks. In
+node2vec, we learn a mapping of nodes to a low-dimensional space
+of features that maximizes the likelihood of preserving network
+neighborhoods of nodes. We define a flexible notion of a node’s
+network neighborhood and design a biased random walk procedure,
+which efficiently explores diverse neighborhoods. Our algorithm
+generalizes prior work which is based on rigid notions of network
+neighborhoods, and we argue that the added flexibility in exploring
+neighborhoods is the key to learning richer representations
+
 <details>
     <summary>DOWNLOAD GEM</summary>
 
