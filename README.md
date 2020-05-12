@@ -27,6 +27,10 @@ The tool will then execute the Structured Deep Network Embedding (SDNE) and node
 <details>
   <summary>SEMESTER 2: Graphical User Interface (GUI), Clustering Methods</summary>
   
-  This section will be updated as the semester progresses.
+  #### Part 1 - K-Means Clustering 
+  The tool uses K-Means clustering to cluster the hosts according to fingerprint similarity, and employs the Elbow Method to calculate the optimal k value (or the optimal number of clusters).
+  
+  #### Part 2 - GUI
+  The tool's Graphic User Interface (GUI) is built using Python's tkinter library.
 
 </details>
